@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -f "LinEnum.sh" ]; then
+if [ ! -f "linpeas.sh" ]; then
   wget "https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh" -O linpeas.sh
   chmod 700 linpeas.sh
   wget "https://raw.githubusercontent.com/Anon-Exploiter/SUID3NUM/master/suid3num.py" -O suid3num.py
