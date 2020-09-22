@@ -5,21 +5,24 @@ if [ $# != 2 ]; then
   echo ""
   echo "Example: $0 10.10.14.12 80"
   echo "Example: $0 tun0 8080"
+  echo "Example: $0 tun0 random"
   echo ""
   exit 1
 fi
 
 ip=$1
-ip_length=$($ip | wc -c)
-port=$2
-
+ip_length=$(echo $ip | wc -c)
 if [ $ip_length -le 5 ]; then
-  ip=$(ip addr | grep $ip | grep inet | tr -s " " | cut -d " " -f 3 | cut -d "/" -f 1)
-
+  ip=$(ip addr | grep $ip | grep inet | tr -s " " | cut -d " " -f 3 | cut -d "/" -f 1):
   if [ ! $ip ]; then
     echo "Selected interface doesn't have IP address."
     exit 1
   fi
+fi
+
+port=$2
+if [ $port -e random]; then
+  port=$((1024 + RANDOM % 50000))
 fi
 
 if [ ! -f "linpeas.sh" ]; then
