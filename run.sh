@@ -13,7 +13,7 @@ fi
 ip=$1
 ip_length=$(echo $ip | wc -c)
 if [ $ip_length -le 5 ]; then
-  ip=$(ip addr | grep $ip | grep inet | tr -s " " | cut -d " " -f 3 | cut -d "/" -f 1):
+  ip=$(ip addr | grep $ip | grep inet | tr -s " " | cut -d " " -f 3 | cut -d "/" -f 1)
   if [ ! $ip ]; then
     echo "Selected interface doesn't have IP address."
     exit 1
@@ -21,7 +21,7 @@ if [ $ip_length -le 5 ]; then
 fi
 
 port=$2
-if [ $port -e random ]; then
+if [ $port == random ]; then
   port=$((1024 + RANDOM % 50000))
 fi
 
