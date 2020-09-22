@@ -24,7 +24,11 @@ if [ ! -f "linuxprivchecker.py" ]; then
   wget "https://raw.githubusercontent.com/sleventyeleven/linuxprivchecker/master/linuxprivchecker.py" -O linuxprivchecker.py
 fi
 
-ip=$(ip addr | grep tun0 | grep inet | grep 10. | tr -s " " | cut -d " " -f 3 | cut -d "/" -f 1)
+ip=$(ip addr | grep tun0 | grep inet | tr -s " " | cut -d " " -f 3 | cut -d "/" -f 1)
+
+if [ ! $ip ]; then
+  ip=$(ip addr | grep eth0 | grep inet | tr -s " " | cut -d " " -f 3 | cut -d "/" -f 1)
+fi
 
 echo ""
 echo "You can download any of these tools to your target linux machine using commands below:"
