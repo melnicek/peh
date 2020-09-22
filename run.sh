@@ -21,7 +21,7 @@ if [ $ip_length -le 5 ]; then
 fi
 
 port=$2
-if [ $port -e random]; then
+if [ $port -e random ]; then
   port=$((1024 + RANDOM % 50000))
 fi
 
