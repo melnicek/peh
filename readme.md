@@ -7,8 +7,7 @@ This script will download common linux privilege escalation tools, then serve th
 ```
 git clone https://github.com/melnicek/lpe
 cd lpe
-chmod +x run.sh
-./run.sh
+sh run.sh
 ```
 
 # Usage
