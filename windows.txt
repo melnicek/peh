@@ -1,0 +1,8 @@
+https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Privesc/PowerUp.ps1
+https://raw.githubusercontent.com/rasta-mouse/Sherlock/master/Sherlock.ps1
+https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1
+https://raw.githubusercontent.com/AonCyberLabs/Windows-Exploit-Suggester/master/windows-exploit-suggester.py
+https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/raw/master/Seatbelt.exe
+https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/raw/master/SharpUp.exe
+https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/raw/master/winPEAS/winPEASexe/winPEAS/bin/Obfuscated%20Releases/winPEASany.exe
+https://github.com/4ndygu/precompiled-watsons/raw/master/Watson.exe
