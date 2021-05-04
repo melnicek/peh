@@ -1,8 +1,10 @@
-##### Linux privilege escalation
+# Linux privilege escalation helper
 
-This script will download common linux privilege escalation tools, then serve them with python's http.server on port 8990 so you can download them on target machine.
+This script will help you to download all common linux privilege escalation tools on your target machine using 2 commands.
 
-# How to start using it ?
+Works even on target machines without acces to internet.
+
+## How to start using it ?
 
 ```
 git clone https://github.com/melnicek/lpe
@@ -10,12 +12,8 @@ cd lpe
 sh run.sh
 ```
 
-# Usage
+## Usage
 
 ```           
-Usage: ./run.sh <LHOST/INTERFACE> <LPORT>
-
-Example: ./run.sh 10.10.14.12 80
-Example: ./run.sh tun0 8080
-Example: ./run.sh tun0 random
+Usage: ./run.sh <LHOST> <LPORT>
 ```

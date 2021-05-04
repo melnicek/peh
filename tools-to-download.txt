@@ -1,0 +1,6 @@
+https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh
+https://raw.githubusercontent.com/Anon-Exploiter/SUID3NUM/master/suid3num.py
+https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh
+https://raw.githubusercontent.com/diego-treitos/linux-smart-enumeration/master/lse.sh
+https://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/linux-exploit-suggester.sh
+https://raw.githubusercontent.com/sleventyeleven/linuxprivchecker/master/linuxprivchecker.py
