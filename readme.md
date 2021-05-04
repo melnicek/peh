@@ -2,7 +2,7 @@
 
 This script will help you to download all common privilege escalation tools on your target machine using 2 simple commands.
 
-Works even on target machines without acces to internet.
+Works even on target machines without internet access.
 
 ## How to start using it ?
 
