@@ -1,8 +1,8 @@
 #!/bin/bash
 
 function help() {
-    echo "Example: $0 --file windows-privesc.peh --interface eth0"
-    echo "Example: $0 -f linux-privesc.peh -i tun0 -p 53"
+    echo "Example: $0 --file windows.peh --interface eth0"
+    echo "Example: $0 -f linux.peh -i tun0 -p 53"
     echo ""
     echo "    -h, --help"
     echo "        Prints this message."
