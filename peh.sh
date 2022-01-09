@@ -45,7 +45,7 @@ if [ "$FILE_PATH" == "" ];then
 fi
 
 TOOL_URLS=$(cat $FILE_PATH)
-ARCH=$(echo "$FILE_PATH" | cut -d'-' -f1)
+ARCH=$(echo "$FILE_PATH" | cut -d'.' -f1)
 
 if [ "$PORT" == "" ];then
     LPORT=8990
