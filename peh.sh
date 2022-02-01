@@ -82,7 +82,7 @@ for TOOL_URL in $TOOL_URLS; do
 
     if [ ! -f "$TOOL_NAME" ]; then
         echo "Downloading '$TOOL_NAME'..."
-        wget "$TOOL_URL" -O "$TOOL_NAME" -q
+        curl "$TOOL_URL" > "$TOOL_NAME"
     else
         echo "'$TOOL_NAME' already downloaded"
     fi
