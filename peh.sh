@@ -38,6 +38,8 @@ fi
 
 if [ "$INTERFACE" == "" ];then
     echo "-i, --interface argument missing"
+    echo "Pick one of the following interfaces:"
+    ip a | grep ' mtu ' | cut -d' ' -f 2 | cut -d: -f 1
     exit 1
 fi
 
