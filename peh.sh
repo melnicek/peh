@@ -39,7 +39,7 @@ fi
 if [ "$INTERFACE" == "" ];then
     echo "-i, --interface argument missing"
     echo "Pick one of the following interfaces:"
-    ip a | grep ' mtu ' | cut -d' ' -f 2 | cut -d: -f 1
+    ip a | grep ' mtu ' | cut -d' ' -f 2 | grep -v 'lo:' | cut -d: -f 1
     exit 1
 fi
 
@@ -53,7 +53,8 @@ LHOST=$(ip a | grep "$INTERFACE" | grep inet | cut -d' ' -f 6 | cut -d'/' -f 1)
 
 if [ "$LHOST" == "" ];then
     echo "Cannot extract IP address from the current interface ($INTERFACE)."
-    echo "Check selected interface with 'ip a' command if it has assigned an IP address."
+    echo "Pick one of the following interfaces:"
+    ip a | grep ' mtu ' | cut -d' ' -f 2 | grep -v 'lo:' | cut -d: -f 1
     exit 1
 fi
 
@@ -81,8 +82,8 @@ echo
 
 if [ $LPORT -lt 1024 ]; then
   echo "Port is less than 1024, you need to provide your password..."
-  sudo python3 -m http.server $LPORT
+  sudo python3 -m http.server -b $LHOST $LPORT
 else
-  python3 -m http.server $LPORT
+  python3 -m http.server -b $LHOST $LPORT
 fi
 
